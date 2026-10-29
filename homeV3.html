@@ -413,6 +413,9 @@ mark{background:linear-gradient(transparent 60%,var(--sun) 60% 92%,transparent 9
 .hv-chip{position:absolute;right:24px;bottom:-40px;animation:none}
 @media(max-width:979px){.hv-chip{position:relative;right:auto;bottom:auto}}
 @media(max-width:767px){.hv{margin-top:-74px;padding-top:calc(74px + 40px);min-height:0}.hv-bg::after{background:linear-gradient(180deg,rgba(13,27,76,.88) 0%,rgba(13,27,76,.72) 50%,rgba(13,27,76,.9) 100%)}}
+
+.hv-img{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+@media(max-width:767px){.hv-img{display:block}.hv-bg video{display:none}}
 </style>
 </head>
 <body>
@@ -491,7 +494,7 @@ mark{background:linear-gradient(transparent 60%,var(--sun) 60% 92%,transparent 9
 
 <main>
 <section class="hero hv" aria-labelledby="hero-h">
-  <div class="hv-bg" aria-hidden="true"><video id="hv" autoplay muted loop playsinline preload="metadata" poster="assets/hero-video-poster.jpg"><source src="assets/hero-video.mp4" type="video/mp4"></video></div>
+  <div class="hv-bg" aria-hidden="true"><img class="hv-img" src="assets/hero-bg.webp" alt="" width="1344" height="930" fetchpriority="high"><video id="hv" muted loop playsinline preload="none" poster="assets/hero-video-poster.jpg" data-src="assets/hero-video.mp4"></video></div>
   <div class="wrap hv-in">
     <div class="hv-copy">
       <span class="eyebrow" data-in style="--d:.05s">Happy Healthy Home</span>
@@ -719,7 +722,8 @@ function $(s,c){return(c||d).querySelector(s)}function $$(s,c){return[].slice.ca
 var reduce=w.matchMedia('(prefers-reduced-motion:reduce)').matches;
 w.addEventListener('load',function(){setTimeout(function(){d.documentElement.classList.add('loaded')},60)});
 if(d.readyState==='complete')d.documentElement.classList.add('loaded');
-var hv=d.getElementById('hv');if(hv&&reduce){hv.removeAttribute('autoplay');hv.pause()}
+var hv=d.getElementById('hv');
+if(hv&&!reduce&&w.matchMedia('(min-width:768px)').matches){hv.src=hv.getAttribute('data-src');hv.autoplay=true;var pr=hv.play();if(pr&&pr.catch)pr.catch(function(){})}
 /* marquee clones */
 $$('[data-mq]').forEach(function(r){
   if(reduce)return;

@@ -522,6 +522,34 @@ h2.h2{font-family:var(--display);font-weight:700;color:var(--navy);font-size:cla
 .f-stats span{display:block;font-size:14px;margin-top:6px;color:rgba(255,255,255,.8)}
 .f-mark{position:relative;z-index:0;text-align:center;white-space:nowrap;overflow:hidden;font:700 clamp(18px,4.6vw,84px)/1 var(--display);letter-spacing:.02em;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.1);padding:0 12px 28px;user-select:none}
 
+/* mobile polish */
+@media(max-width:767px){
+  .sec{padding-block:clamp(52px,12vw,72px)}
+  .social a{width:44px;height:44px}
+  .social{gap:10px}
+  .foot .ci a,.f-owner a{display:inline-flex;align-items:center;min-height:44px}
+  .f-owner a{min-height:36px}
+  .fab{width:60px;height:60px;min-height:60px;padding:0;justify-content:center;font-size:0;gap:0;right:14px;bottom:14px}
+  .fab .i{width:26px;height:26px}
+  .scard h3 a{display:inline-block;padding-block:8px}
+  .f-bottom .wrap{padding-bottom:84px}
+  .cta2{border-radius:32px}
+  .cta2-call{left:2%}
+  .cta2-name{right:2%}
+  .rv-card{padding:22px}
+  .rv-card blockquote{font-size:1.15rem}
+  .how-head{margin-bottom:0}
+}
+@media(max-width:480px){
+  .wrap{padding-inline:20px}
+  .happy-seal{width:116px;height:116px}
+  .ptable tbody tr:not(.grp){padding:18px 16px}
+  .f-stats div{padding:18px 10px}
+}
+@media(min-width:768px) and (max-width:1039px){
+  .topbar .tb-est{padding:10px 16px}
+  .topbar a{min-height:44px}
+}
 /* cursor sparkles */
 .cs{position:fixed;z-index:300;pointer-events:none;width:12px;height:12px;color:var(--gold);animation:cs .9s ease-out forwards}
 @keyframes cs{0%{transform:translate(-50%,-50%) scale(.4) rotate(0);opacity:1}100%{transform:translate(calc(-50% + var(--x)),calc(-50% + 28px)) scale(1.1) rotate(120deg);opacity:0}}

@@ -15,6 +15,7 @@
 :root{--ink:#0d1b4c;--ink2:#18297a;--cream:#fff9ee;--sun:#ffc531;--sun2:#ffd35e;--aqua:#e3f4f5;--aqua2:#c4e6e9;--teal:#12857a;--text:#3b4466;--line:rgba(13,27,76,.12);--serif:'Fraunces',Georgia,'Times New Roman',serif;--sans:'Plus Jakarta Sans','DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:clip}
 body{margin:0;background:var(--cream);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3,h4,p,ul,ol,figure,blockquote,dl,dd{margin:0}
 ul,ol{padding:0;list-style:none}
@@ -394,6 +395,24 @@ mark{background:linear-gradient(transparent 60%,var(--sun) 60% 92%,transparent 9
   .js .hc-main{clip-path:none}
   .rv{overflow-x:auto}
 }
+
+/* video hero */
+.hv{margin-top:-86px;padding:calc(86px + clamp(56px,8vw,110px)) 0 clamp(80px,10vw,140px);min-height:min(88vh,780px);display:flex;align-items:center;color:#fff;background:var(--ink)}
+.hv::before{display:none}
+.hv-bg{position:absolute;inset:0;z-index:-2;overflow:hidden;background:var(--ink)}
+.hv-bg video{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hv-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(95deg,rgba(13,27,76,.92) 0%,rgba(13,27,76,.78) 45%,rgba(13,27,76,.3) 100%),linear-gradient(180deg,rgba(13,27,76,.55) 0%,transparent 28%,rgba(13,27,76,.5) 100%)}
+.hv-in{position:relative;display:flex;flex-direction:column;gap:30px;align-items:flex-start}
+.hv-copy{max-width:720px}
+.hv h1{color:#fff}
+.hv mark{background:none;color:var(--sun)}
+.hv .eyebrow{color:var(--sun)}
+.hv .sub{color:rgba(255,255,255,.9)}
+.hv .hero-ticks{color:#fff}
+.hv .hero-ticks .i{background:var(--sun);color:var(--ink)}
+.hv-chip{position:absolute;right:24px;bottom:-40px;animation:none}
+@media(max-width:979px){.hv-chip{position:relative;right:auto;bottom:auto}}
+@media(max-width:767px){.hv{margin-top:-74px;padding-top:calc(74px + 40px);min-height:0}.hv-bg::after{background:linear-gradient(180deg,rgba(13,27,76,.88) 0%,rgba(13,27,76,.72) 50%,rgba(13,27,76,.9) 100%)}}
 </style>
 </head>
 <body>
@@ -471,24 +490,20 @@ mark{background:linear-gradient(transparent 60%,var(--sun) 60% 92%,transparent 9
 </header>
 
 <main>
-<section class="hero" aria-labelledby="hero-h">
-  <div class="wrap hero-grid">
-    <div>
+<section class="hero hv" aria-labelledby="hero-h">
+  <div class="hv-bg" aria-hidden="true"><video id="hv" autoplay muted loop playsinline preload="metadata" poster="assets/hero-video-poster.jpg"><source src="assets/hero-video.mp4" type="video/mp4"></video></div>
+  <div class="wrap hv-in">
+    <div class="hv-copy">
       <span class="eyebrow" data-in style="--d:.05s">Happy Healthy Home</span>
       <h1 id="hero-h" data-in style="--d:.15s">Calgary's home cleaners <mark>since 2001.</mark></h1>
       <p class="sub" data-in style="--d:.3s">Experienced, background-checked, insured and bonded cleaners. Let a professional crew take care of your dirty business.</p>
       <div class="hero-cta" data-in style="--d:.45s">
         <a class="btn btn-sun btn-lg" href="book-online.html"><svg class="i"><use href="#i-cal"/></svg>Book your cleaning</a>
-        <a class="btn btn-line btn-lg" href="tel:+14039685006"><svg class="i"><use href="#i-phone"/></svg>(403) 968-5006</a>
+        <a class="btn btn-wline btn-lg" href="tel:+14039685006"><svg class="i"><use href="#i-phone"/></svg>(403) 968-5006</a>
       </div>
       <ul class="hero-ticks" data-in style="--d:.6s"><li><svg class="i"><use href="#i-check"/></svg>Background checked</li><li><svg class="i"><use href="#i-check"/></svg>Insured and bonded</li><li><svg class="i"><use href="#i-check"/></svg>Pet friendly</li></ul>
     </div>
-    <div class="hc" data-in style="--d:.3s">
-      <span class="hc-sun" aria-hidden="true"></span><span class="hc-ring" aria-hidden="true"></span>
-      <div class="hc-main"><img src="assets/kitchen.webp" alt="A Home Cleaning Company cleaner wiping a bright kitchen counter" width="1402" height="1122" fetchpriority="high"></div>
-      <div class="hc-circle"><img src="assets/hero.webp" alt="Smiling Home Cleaning Company cleaner in a navy branded polo" width="1100" height="1344"></div>
-      <div class="hc-chip"><span class="ic"><svg class="i"><use href="#i-repeat"/></svg></span><div><b>Same cleaner</b><small>shows up every week</small></div></div>
-    </div>
+    <div class="hc-chip hv-chip" data-in style="--d:.7s"><span class="ic"><svg class="i"><use href="#i-repeat"/></svg></span><div><b>Same cleaner</b><small>shows up every week</small></div></div>
   </div>
 </section>
 
@@ -704,6 +719,7 @@ function $(s,c){return(c||d).querySelector(s)}function $$(s,c){return[].slice.ca
 var reduce=w.matchMedia('(prefers-reduced-motion:reduce)').matches;
 w.addEventListener('load',function(){setTimeout(function(){d.documentElement.classList.add('loaded')},60)});
 if(d.readyState==='complete')d.documentElement.classList.add('loaded');
+var hv=d.getElementById('hv');if(hv&&reduce){hv.removeAttribute('autoplay');hv.pause()}
 /* marquee clones */
 $$('[data-mq]').forEach(function(r){
   if(reduce)return;

@@ -352,9 +352,14 @@ h2.h2{font-family:var(--display);font-weight:700;color:var(--navy);font-size:cla
 .nav-ph small{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);line-height:1.1}
 .nav-ph b{display:block;font:700 18px/1.2 var(--display);color:var(--navy)}
 .dnav>a,.dnav>.has-dd>button{white-space:nowrap}
-.nav-ph{white-space:nowrap}
+.nav-ph{white-space:nowrap;flex:none}
+.nav-cta{flex:none;white-space:nowrap;padding:0 26px}
+.nav-in{flex-wrap:nowrap}
 @media(min-width:1040px) and (max-width:1359px){.dnav>a,.dnav>.has-dd>button{padding:0 12px;font-size:15px}}
-@media(min-width:1360px){.nav-ph{display:flex}}
+@media(min-width:1400px){.nav-ph{display:flex}}
+.hdr .wrap{max-width:1400px}
+.nav-in{gap:12px}
+@media(min-width:1040px) and (max-width:1279px){.brand img{width:44px}.brand b{font-size:18px}.brand small{font-size:9.5px;letter-spacing:.12em}.dnav{gap:0}.dnav>a,.dnav>.has-dd>button{padding:0 10px;font-size:14.5px}.nav-cta{padding:0 18px}.nav-cta .i{display:none}}
 
 /* hero: photo background, centred */
 .hero{padding:clamp(70px,8vw,120px) 0 clamp(150px,15vw,210px)}
@@ -496,7 +501,10 @@ h2.h2{font-family:var(--display);font-weight:700;color:var(--navy);font-size:cla
 .cta2-disc{position:absolute;width:min(380px,86%);aspect-ratio:1;border-radius:50%;background:var(--gold);right:2%;top:50%;translate:0 -50%}
 .cta2-img{position:relative;width:min(300px,68%);aspect-ratio:4/4.6;border-radius:32px;overflow:hidden;rotate:3deg;box-shadow:0 40px 70px -30px rgba(20,35,94,.7);border:8px solid #fff;transition:rotate .6s var(--ease)}
 .cta2:hover .cta2-img{rotate:0deg}
-.cta2-img img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.cta2-img img{width:100%;height:100%;object-fit:cover;object-position:52% 22%}
+.cta2-name{position:absolute;right:0;top:6%;background:#fff;border:2px solid var(--gold);border-radius:18px;padding:10px 16px;box-shadow:0 20px 36px -18px rgba(20,35,94,.6);display:grid;line-height:1.2}
+.cta2-name b{font:700 1.05rem/1.2 var(--display);color:var(--navy)}
+.cta2-name small{font-size:12.5px;color:var(--red);font-weight:700}
 .cta2-call{position:absolute;left:0;bottom:6%;display:flex;align-items:center;gap:12px;background:var(--navy);color:#fff;border-radius:22px;padding:12px 18px 12px 12px;box-shadow:0 24px 44px -16px rgba(20,35,94,.8);transition:transform .35s var(--ease)}
 .cta2-call:hover{transform:translateY(-4px)}
 .cta2-call .ic{width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center}
@@ -974,7 +982,8 @@ html{scroll-behavior:auto}
       </div>
       <div class="cta2-vis" aria-hidden="false">
         <span class="cta2-disc" aria-hidden="true"></span>
-        <div class="cta2-img"><img src="assets/hero.webp" alt="Smiling Home Cleaning Company cleaner in a navy branded polo" width="1100" height="1344" loading="lazy"></div>
+        <div class="cta2-img"><img src="assets/sonia.webp" alt="Sonia Ceren, owner and manager of The Home Cleaning Company" width="900" height="896" loading="lazy"></div>
+        <span class="cta2-name"><b>Sonia Ceren</b><small>Owner and Manager</small></span>
         <a class="cta2-call" href="tel:+14039685006"><span class="ic"><svg class="i"><use href="#i-phone"/></svg></span><span><small>Call Sonia</small><b>(403) 968-5006</b></span></a>
       </div>
     </div>

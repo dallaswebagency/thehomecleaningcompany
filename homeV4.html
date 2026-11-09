@@ -56,16 +56,17 @@ h1,h2,h3{font-weight:600;line-height:1.12;letter-spacing:.01em}
 .sec-h h2{font-size:clamp(1.9rem,3.6vw,2.8rem);text-transform:uppercase;letter-spacing:.04em;margin-top:8px}
 .sec-h p{color:var(--mut);margin-top:12px}
 .sec-h.c{margin-inline:auto;text-align:center}
-.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
-.srow{display:grid;grid-template-columns:56px 1fr auto;gap:18px;align-items:start;padding:26px 0;border-top:1px solid var(--line)}
-.srow:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
-.srow .ic{width:56px;height:56px;border-radius:50%;background:var(--br);color:var(--gold);display:grid;place-items:center;font-size:1.5rem}
-.srow h3{font-size:1.25rem;text-transform:uppercase;letter-spacing:.06em}
-.srow p{color:var(--mut);margin:6px 0 10px;font-size:1rem}
-.srow .go{font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;gap:14px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.srow{display:flex;flex-direction:column;align-items:flex-start;gap:0;padding:30px 26px 26px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 6px 22px rgba(38,20,18,.06);transition:.25s;position:relative}
+.srow:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(38,20,18,.13);border-color:var(--gold)}
+.srow .ic{width:58px;height:58px;border-radius:14px;background:var(--br);color:var(--gold);display:grid;place-items:center;font-size:1.6rem;margin-bottom:18px}
+.srow>div{flex:1;display:flex;flex-direction:column;width:100%}
+.srow h3{font-size:1.2rem;text-transform:uppercase;letter-spacing:.06em}
+.srow p{color:var(--mut);margin:8px 0 18px;font-size:1rem;flex:1}
+.srow .go{font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;display:flex;gap:18px;padding-top:16px;border-top:1px solid var(--line)}
 .srow .go a{border-bottom:2px solid var(--gold);padding-bottom:1px}.srow .go a:hover{color:var(--gold)}
-.rate{font-weight:600;color:var(--br);background:var(--sand);padding:6px 12px;border-radius:999px;font-size:.85rem;white-space:nowrap;letter-spacing:.03em}
-.svc-note{margin-top:34px;background:var(--br);color:#fff;border-radius:10px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.rate{position:absolute;top:30px;right:22px;font-weight:600;color:var(--br);background:var(--sand);padding:6px 12px;border-radius:999px;font-size:.85rem;white-space:nowrap;letter-spacing:.03em}
+.svc-note{grid-column:span 2;margin-top:0;background:var(--br);color:#fff;border-radius:10px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .svc-note h3{font-size:1.3rem;text-transform:uppercase;letter-spacing:.05em}.svc-note p{color:#e7d6c9;margin-top:4px}
 .alt{background:var(--sand)}
 table.pt{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(38,20,18,.08)}
@@ -117,7 +118,7 @@ details p{padding:0 0 20px;color:var(--mut)}
 .hero-ph::after{display:none}
 .name-tag{left:20px;right:auto;bottom:auto;top:calc(min(100vw,480px) - 62px);text-align:left}
 .hero-t{padding:6px 20px 44px;width:min(1180px,100%)}
-.svc{grid-template-columns:1fr}.srow:nth-last-child(2){border-bottom:0}
+.svc{grid-template-columns:1fr 1fr}.svc-note{grid-column:1/-1}
 .about{grid-template-columns:1fr}.about img{max-height:420px;aspect-ratio:4/3;object-position:50% 20%}
 .rv{grid-template-columns:1fr}.foot .g{grid-template-columns:1fr;gap:28px}
 }
@@ -127,7 +128,7 @@ body{font-size:16px;padding-bottom:64px}
 .brand{font-size:.8rem}.brand img{width:42px;height:42px}
 .hdr .nav>.btn{display:none}
 .hero-cta .btn{width:100%}
-.srow{grid-template-columns:48px 1fr;gap:14px}.srow .ic{width:48px;height:48px}.srow .rate{grid-column:2;justify-self:start;order:3}
+.svc{grid-template-columns:1fr}.svc-note{grid-column:auto}.srow{padding:26px 22px 22px}.srow .rate{top:26px;right:18px}
 .why{grid-template-columns:1fr 1fr}.why div:last-child{grid-column:1/-1}
 table.pt,.pt tbody,.pt tr,.pt td{display:block}.pt thead{display:none}
 .pt tr{padding:16px 18px;border-top:1px solid var(--line)}.pt td{border:0;padding:0}.pt tr.gh{padding:0}.pt tr.gh td{padding:10px 18px}
@@ -200,8 +201,7 @@ table.pt,.pt tbody,.pt tr,.pt td{display:block}.pt thead{display:none}
 <article class="srow"><span class="ic"><svg class="i"><use href="#i-smile"/></svg></span><div><h3>Parent Helper</h3><p>Loving childcare and home help while you're still at home.</p><span class="go"><a href="services-parent-helper.html">Learn more</a><a href="book-online.html">Book now</a></span></div><span class="rate">From $25 / hr</span></article>
 <article class="srow"><span class="ic"><svg class="i"><use href="#i-heart"/></svg></span><div><h3>Senior Home Helper</h3><p>Compassionate in-home help so loved ones stay safely independent.</p><span class="go"><a href="services-seniors.html">Learn more</a><a href="book-online.html">Book now</a></span></div><span class="rate">Tailored plan</span></article>
 <article class="srow"><span class="ic"><svg class="i"><use href="#i-user"/></svg></span><div><h3>Low Income Families</h3><p>Affordable cleaning support for Calgary families who need a hand.</p><span class="go"><a href="services-low-income-families.html">Learn more</a><a href="tel:+14039685006">Call Sonia</a></span></div><span class="rate">Call Sonia</span></article>
-</div>
-<div class="svc-note"><div><h3>Not sure what you need?</h3><p>We can customize any cleaning plan. Tell Sonia about your home and she'll build a plan around your schedule and budget.</p></div><a class="btn btn-gold" href="book-online.html">Book online</a></div>
+<div class="svc-note"><div><h3>Not sure what you need?</h3><p>We can customize any cleaning plan. Tell Sonia about your home and she'll build a plan around your schedule and budget.</p></div><a class="btn btn-gold" href="book-online.html">Book online</a></div></div>
 </div></section>
 <section class="sec alt" id="pricing"><div class="wrap">
 <div class="sec-h"><span class="eyebrow">Simple pricing</span><h2>Honest flat rates</h2><p>Find the kind of home you have and see the rate.</p></div>

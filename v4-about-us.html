@@ -259,8 +259,9 @@ body{font-size:16px;padding-bottom:64px}
 .dd-m:before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
 .dd:hover .dd-m,.dd:focus-within .dd-m{display:block}
 .dd-m a{display:block;padding:10px 14px;border-radius:8px;color:var(--ink);font-size:.95rem;letter-spacing:.02em;text-transform:none}.dd-m a:hover{background:#fdf3cf;color:var(--gd)}
-@media(max-width:900px){.dd{display:block}.dd-m{display:block;position:static;border:0;box-shadow:none;padding:0 0 0 14px;min-width:0}.dd-m:before{display:none}.dd-m a{padding:8px 4px;font-size:.9rem}}
+@media(max-width:1020px){.nav:not(.open) .dd{display:none}.nav.open .dd{display:block}.nav.open .dd>a{display:flex}.dd-m{display:block;position:static;border:0;box-shadow:none;padding:0 0 0 14px;min-width:0}.dd-m:before{display:none}.dd-m a{padding:8px 4px;font-size:.9rem}}
 .nav a.act{color:var(--gd)}
+@media(max-width:720px){.foot{padding-bottom:64px}}
 .pg{background:#f6ecdf;padding-block:clamp(36px,5vw,64px) clamp(40px,5vw,72px)}
 .crumb{font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-bottom:18px;display:flex;flex-wrap:wrap;gap:8px}
 .crumb a:hover{color:var(--gd)}

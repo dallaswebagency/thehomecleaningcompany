@@ -262,6 +262,17 @@ body{font-size:16px;padding-bottom:64px}
 @media(max-width:720px){.foot{padding-bottom:64px}}
 @media(max-width:720px){.foot{padding-bottom:64px}}
 @media(max-width:480px){.btn{white-space:normal;text-align:center;letter-spacing:.07em;padding-inline:16px;line-height:1.3}.hero-t,.v5h .wrap>div{min-width:0}}
+/* full portrait */
+@media(min-width:861px){.hero-ph{width:auto;aspect-ratio:1000/1341;right:0}.hero-ph img{object-fit:cover;object-position:50% 0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%)}.name-tag{right:16px}}
+@media(max-width:860px){.hero-ph{height:min(124vw,540px)}.hero-ph img{object-position:50% 12%}}
+/* v5-style framed portrait */
+.hero-ph::before{content:"";position:absolute;inset:22px -22px -22px 22px;background:var(--gold);border-radius:28px;z-index:0}
+.hero-ph::after{display:none!important}
+.hero-ph img{position:relative;z-index:1;border-radius:28px;border:3px solid var(--br);-webkit-mask-image:none!important;mask-image:none!important;filter:none;object-fit:cover;object-position:50% 0;aspect-ratio:1000/1341;height:auto}
+.hero-ph .name-tag{position:absolute;z-index:3;left:-14px;right:auto;top:auto;bottom:26px;text-align:left;color:var(--br);background:#fff;padding:12px 20px;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.2);font-weight:600;letter-spacing:.06em}
+@media(min-width:861px){.hero-ph{position:absolute;top:50%;bottom:auto;transform:translateY(-50%);right:max(34px,calc((100vw - 1180px)/2 + 22px));width:min(36vw,430px);height:auto;aspect-ratio:auto}.hero-ph img{width:100%}}
+@media(max-width:860px){.hero-ph{height:auto;width:calc(100% - 62px);max-width:360px;margin:24px auto 28px;position:relative;left:-10px;order:-1}.hero-ph img{width:100%}.hero-ph .name-tag{left:-8px;bottom:18px}}
+@media(max-width:1020px){.top .r{display:none}.top .wrap{justify-content:center}.top .l{gap:22px;flex-wrap:nowrap}.top .l a{white-space:nowrap}}
 
 /* inner pages */
 .dd{position:relative;display:inline-flex;align-items:center}.dd>a{display:inline-flex;gap:5px;align-items:center}.dd>a .i{width:12px;height:12px}

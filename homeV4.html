@@ -183,6 +183,16 @@ body{font-size:16px;padding-bottom:64px}
 .srow .go{border-top:0;padding-top:0;justify-content:center}
 .srow .rate{top:14px;right:14px;background:rgba(255,255,255,.95);box-shadow:0 4px 14px rgba(38,20,18,.15)}
 @media(max-width:720px){.srow .rate{top:12px;right:12px}.srow{padding:0}.svc{gap:36px}}
+
+/* photo hero */
+.hero2{position:relative;background:#2a1714;color:#fff;overflow:hidden;min-height:clamp(480px,74vh,700px);display:grid;place-items:center;isolation:isolate}
+.hero2>img{position:absolute;top:-20px;bottom:-20px;right:-20px;width:calc(64% + 20px);height:calc(100% + 40px);max-width:none;object-fit:cover;object-position:50% 20%;filter:blur(3px) brightness(.7) saturate(.92);z-index:-2;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%);mask-image:linear-gradient(90deg,transparent 0,#000 34%)}
+.hero2::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(33,17,15,.05),rgba(33,17,15,.45) 80%);z-index:-1}
+.hero2-in{text-align:center;position:relative;padding-block:80px}
+.hero2 h1{font-size:clamp(2.2rem,6vw,4.8rem);text-transform:uppercase;letter-spacing:.05em;line-height:1.1;max-width:15em;margin:0 auto 38px;font-weight:600;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.btn-line2{border:2px solid #fff;color:#fff;padding:20px 38px;font-size:1rem;letter-spacing:.16em;background:rgba(255,255,255,.04);backdrop-filter:blur(2px)}
+.btn-line2:hover{background:#fff;color:var(--br)}
+@media(max-width:720px){.hero2{min-height:520px}.hero2-in{padding-block:64px}.hero2 h1{margin-bottom:30px}.btn-line2{width:100%;padding:18px 16px;font-size:.88rem;letter-spacing:.12em}.hero2>img{width:calc(100% + 40px);left:-20px;right:auto;object-position:50% 18%;-webkit-mask-image:none;mask-image:none;filter:blur(3px) brightness(.55) saturate(.9)}}
 </style></head><body>
 <div style="position:absolute;width:0;height:0;overflow:hidden"><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
 <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
@@ -228,15 +238,7 @@ body{font-size:16px;padding-bottom:64px}
 <nav class="nav" id="nav"><a class="lk" href="#services">Services</a><a class="lk" href="#pricing">Pricing</a><a class="lk" href="#about">About</a><a class="lk" href="#faq">FAQ</a><a class="lk" href="#contact">Contact</a><a class="btn btn-gold btn-sm" href="book-online.html">Book online</a></nav>
 <button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button></div></header>
 <main id="top">
-<section class="hero"><div class="wrap">
-<div class="hero-t"><span class="eyebrow">Calgary home cleaning since 2001</span>
-<h1>The Home Cleaning Company Ltd</h1>
-<p class="lead">Experienced, background-checked, insured and bonded cleaners. Let a professional crew take care of your dirty business.</p>
-<div class="hero-cta"><a class="btn btn-gold" href="book-online.html">Book your cleaning service</a><a class="btn btn-line" href="tel:+14039685006"><svg class="i"><use href="#i-phone"/></svg>(403) 968-5006</a></div>
-<div class="hero-ticks"><span><svg class="i"><use href="#i-check"/></svg>Background checked</span><span><svg class="i"><use href="#i-check"/></svg>Insured and bonded</span><span><svg class="i"><use href="#i-check"/></svg>Pet friendly</span></div></div>
-<div class="hero-ph"><img src="assets/sonia.webp" alt="Sonia Ceren, owner of The Home Cleaning Company" fetchpriority="high"></div>
-<div class="name-tag"><b>Sonia Ceren</b>Owner and manager</div>
-</div></section>
+<section class="hero2"><img src="assets/sonia.webp" alt="Sonia Ceren, owner of The Home Cleaning Company" fetchpriority="high"><div class="hero2-in wrap"><h1>The Home Cleaning Company Ltd</h1><a class="btn btn-line2" href="book-online.html">Book your cleaning service</a></div></section>
 <section class="sec" id="services"><div class="wrap">
 <div class="sec-h"><span class="eyebrow">What we do</span><h2>All our services</h2><p>Everything your home needs, from weekly cleans to parent and senior helpers.</p></div>
 <div class="svc"><article class="srow"><a class="ph" href="services-residential-cleaning.html" tabindex="-1" aria-hidden="true"><img src="assets/kitchen.webp" alt="" loading="lazy"></a><div><h3><a href="services-residential-cleaning.html">Residential Cleaning</a></h3><p>Weekly, bi-weekly or one-time cleans with flat rates for continuous service.</p><span class="go"><a href="services-residential-cleaning.html">Learn more</a><a href="book-online.html">Book now</a></span></div><span class="rate">From $140 flat</span></article>

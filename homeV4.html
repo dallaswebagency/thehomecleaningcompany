@@ -277,6 +277,16 @@ body{font-size:16px;padding-bottom:64px}
 .hero-ph::before{display:none!important}
 .hero-ph img{border:0!important;box-shadow:none;border-radius:20px}
 .hero-ph .name-tag{left:16px;bottom:16px}
+
+/* photo hero with text overlay */
+.hz{background:#24110c url(assets/sonia-new.webp) right top/auto 100% no-repeat;position:relative;min-height:clamp(520px,46vw,700px);display:flex;align-items:center;color:#fff}
+.hz:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#24110c 0,#24110c 34%,rgba(36,17,12,0) 62%);pointer-events:none}
+.hz .wrap{position:relative;z-index:2}
+.hz h1{color:#fff;font-size:clamp(2.2rem,5.2vw,4.6rem);line-height:1.08;text-transform:uppercase;letter-spacing:.04em;max-width:9.5em;margin:0 0 34px;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.hz-b{display:inline-block;border:2px solid #fff;border-radius:6px;color:#fff;font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:clamp(.95rem,1.5vw,1.25rem);padding:18px 30px;max-width:15em;line-height:1.35;text-align:center;transition:.2s}
+.hz-b:hover{background:var(--gold);border-color:var(--gold);color:var(--br)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:860px){.hz{background-size:auto 132%;background-position:0 0;min-height:min(150vw,600px);align-items:center}.hz:before{background:linear-gradient(90deg,rgba(36,17,12,.82) 0,rgba(36,17,12,.35) 52%,rgba(36,17,12,0) 75%)}.hz h1{max-width:6.5em;font-size:clamp(2rem,9.6vw,3.2rem)}.hz-b{font-size:.95rem;padding:15px 20px;max-width:12.5em}}
 </style></head><body>
 <div style="position:absolute;width:0;height:0;overflow:hidden"><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
 <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
@@ -322,15 +332,7 @@ body{font-size:16px;padding-bottom:64px}
 <nav class="nav" id="nav"><a class="lk act" href="homeV4.html">Home</a><div class="dd"><a class="lk" href="v4-services.html">Services<svg class="i"><use href="#i-down"/></svg></a><div class="dd-m"><a href="v4-residential-cleaning.html">Residential Cleaning</a><a href="v4-commercial-cleaning.html">Commercial Cleaning</a><a href="v4-move-in-move-out.html">Move In / Move Out</a><a href="v4-carpet-cleaning.html">Carpet Cleaning</a><a href="v4-parent-helper.html">Parent Helper</a><a href="v4-senior-home-helper.html">Senior Home Helper</a><a href="v4-low-income-families.html">Low Income Families</a></div></div><a class="lk" href="v4-pricing.html">Pricing</a><a class="lk" href="v4-about-us.html">About</a><a class="lk" href="v4-gift-cards.html">Gift Cards</a><a class="lk" href="v4-contact.html">Contact</a><a class="btn btn-gold btn-sm" href="v4-book-online.html">Book online</a></nav>
 <button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button></div></header>
 <main id="top">
-<section class="hero"><div class="wrap">
-<div class="hero-t"><span class="eyebrow">Calgary home cleaning since 2001</span>
-<h1>The Home Cleaning Company Ltd</h1>
-<p class="lead">Experienced, background-checked, insured and bonded cleaners. Let a professional crew take care of your dirty business.</p>
-<div class="hero-cta"><a class="btn btn-gold" href="v4-book-online.html">Book your cleaning service</a><a class="btn btn-line" href="tel:+14039685006"><svg class="i"><use href="#i-phone"/></svg>(403) 968-5006</a></div>
-<div class="hero-ticks"><span><svg class="i"><use href="#i-check"/></svg>Background checked</span><span><svg class="i"><use href="#i-check"/></svg>Insured and bonded</span><span><svg class="i"><use href="#i-check"/></svg>Pet friendly</span></div></div>
-<div class="hero-ph"><img src="assets/sonia-new.webp" alt="Sonia Ceren, owner of The Home Cleaning Company" fetchpriority="high"><div class="name-tag"><b>Sonia Ceren</b>Owner and manager</div></div>
-
-</div></section>
+<section class="hz"><div class="wrap"><div class="hz-t"><h1>The Home Cleaning Company Ltd</h1><a class="hz-b" href="v4-book-online.html">Book your cleaning service</a></div></div><span class="sr-only">Sonia Ceren, owner and manager of The Home Cleaning Company</span></section>
 <section class="intro"><div class="wrap"><h2>Specializing in home and commercial cleaning since 2001</h2><p>Our staff has been cleaning Calgary homes since 2001. We keep growing through a relationship-focused approach and custom cleaning solutions. Honesty, reliability and customer satisfaction are the keynotes of our business.</p><a class="intro-l" href="#about">Meet the owner &rarr;</a></div></section>
 <section class="sec" id="services"><div class="wrap">
 <div class="sec-h"><span class="eyebrow">What we do</span><h2>All our services</h2><p>Everything your home needs, from weekly cleans to parent and senior helpers.</p></div>

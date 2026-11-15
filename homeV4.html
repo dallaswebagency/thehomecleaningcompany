@@ -330,6 +330,31 @@ body{font-size:16px;padding-bottom:64px}
 @media(max-width:860px){.hh{min-height:min(168vw,700px);align-items:flex-end}.hh-img{left:-16vw}.hh-c{padding:70px 0 56px}}
 /* mobile: portrait centred and slightly smaller */
 @media(max-width:860px){.hh-img{left:50%;top:0;width:128%;height:auto;max-width:none;transform:translateX(-55%)}.hh:before{background:linear-gradient(180deg,rgba(37,16,13,.45) 0,rgba(37,16,13,.6) 45%,rgba(37,16,13,.9) 100%)}.hh-c{padding:70px 0 48px}}
+
+/* mobile home: dark portrait hero + wave + intro */
+.intro-pill{display:none}
+@media(max-width:860px){
+.hh{min-height:min(150vw,620px);align-items:flex-end;background:#2a120d}
+.hh-img{left:auto;right:-14vw;top:0;width:112%;height:auto;max-width:none;transform:none;object-fit:initial}
+.hh:before{background:linear-gradient(90deg,rgba(42,18,13,.88) 0,rgba(42,18,13,.55) 50%,rgba(42,18,13,0) 80%),linear-gradient(180deg,rgba(42,18,13,0) 55%,rgba(42,18,13,.75) 100%)}
+.hh:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:clamp(46px,14vw,80px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M0 62C190 98 360 94 560 60S860 8 1000 22V100H0Z' fill='%23f6ecdf'/%3E%3Cpath d='M0 62C190 98 360 94 560 60S860 8 1000 22' fill='none' stroke='%23d9a93a' stroke-width='3'/%3E%3C/svg%3E") center/100% 100% no-repeat;z-index:2}
+.hh .wrap{position:relative;z-index:3}
+.hh-c{padding:70px 0 clamp(70px,19vw,100px);max-width:none}
+.hh-k{position:relative;max-width:16em;padding-top:20px;font-size:.78rem;line-height:1.5;letter-spacing:.22em}
+.hh-k:before{content:"";position:absolute;top:0;left:0;width:58px;height:2px;background:var(--gold)}
+.hh h1{max-width:7.5em;font-size:clamp(1.9rem,8.6vw,2.5rem);line-height:1.08;margin-bottom:22px}
+.hh-btn{display:inline-block;width:auto;max-width:none;padding:18px 24px;border:0;border-radius:10px;background:linear-gradient(180deg,#f7d263,#e0a92c);color:#1b1630;font-size:.86rem;letter-spacing:.1em;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.hh-btn:hover,.hh-btn:focus-visible{background:linear-gradient(180deg,#fadc78,#e8b53a);color:#1b1630;letter-spacing:.1em}
+.hh-t{display:none}
+.intro{padding-top:34px;padding-bottom:48px}
+.intro-pill{display:flex;align-items:center;gap:14px;margin:0 auto 26px;max-width:340px}
+.intro-pill:before,.intro-pill:after{content:"";flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--gold))}
+.intro-pill:after{transform:scaleX(-1)}
+.intro-pill span{padding:12px 28px;border-radius:999px;background:var(--br);color:#fff;font-size:.88rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase}
+.intro h2{font-size:clamp(1.9rem,8.4vw,2.5rem)}
+.intro-l{font-weight:600;font-size:1.15rem;border-bottom-width:3px}
+}
+@media(min-width:561px) and (max-width:860px){.hh{min-height:600px}.hh-img{width:560px;right:0}}
 </style><link rel="preload" as="image" href="assets/sonia-new.webp" type="image/webp" fetchpriority="high">
 </head><body>
 <div style="position:absolute;width:0;height:0;overflow:hidden"><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -377,7 +402,7 @@ body{font-size:16px;padding-bottom:64px}
 <button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button></div></header>
 <main id="top">
 <section class="hh" aria-label="Welcome"><img class="hh-img" src="assets/sonia-new.webp" width="1000" height="1341" alt="Sonia Ceren, owner and manager of The Home Cleaning Company" fetchpriority="high" decoding="async"><div class="wrap"><div class="hh-c"><p class="hh-k">Calgary's trusted cleaning professionals</p><h1>Professional Home<br>Cleaning Services</h1><p class="hh-p">Enjoy a spotless, fresh and comfortable home with experienced, background-checked, insured and bonded cleaning professionals.</p><a class="hh-btn" href="v4-book-online.html">Book your cleaning service</a><p class="hh-t">Trusted Calgary cleaning team since 2001</p></div></div></section>
-<section class="intro"><div class="wrap"><h2>Specializing in home and commercial cleaning since 2001</h2><p>Our staff has been cleaning Calgary homes since 2001. We keep growing through a relationship-focused approach and custom cleaning solutions. Honesty, reliability and customer satisfaction are the keynotes of our business.</p><a class="intro-l" href="#about">Meet the owner &rarr;</a></div></section>
+<section class="intro"><div class="wrap"><div class="intro-pill"><span>Since 2001</span></div><h2>Specializing in home and commercial cleaning since 2001</h2><p>Our staff has been cleaning Calgary homes since 2001. We keep growing through a relationship-focused approach and custom cleaning solutions. Honesty, reliability and customer satisfaction are the keynotes of our business.</p><a class="intro-l" href="#about">Meet the owner &rarr;</a></div></section>
 <section class="sec" id="services"><div class="wrap">
 <div class="sec-h"><span class="eyebrow">What we do</span><h2>All our services</h2><p>Everything your home needs, from weekly cleans to parent and senior helpers.</p></div>
 <div class="svc"><article class="srow"><a class="ph" href="v4-residential-cleaning.html" tabindex="-1" aria-hidden="true"><img src="assets/residential-home.webp" alt="" loading="lazy" style="object-position:50% 30%"></a><div><h3><a href="v4-residential-cleaning.html">Residential Cleaning</a></h3><p>Weekly, bi-weekly or one-time cleans with flat rates for continuous service.</p><span class="go"><a href="v4-residential-cleaning.html">Learn more</a><a href="v4-book-online.html">Book now</a></span></div></article>
